@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
+import { WerewolvesService } from '../../werewolves/werewolves.service'
+
+
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -18,10 +21,12 @@ export class LoginPageComponent implements OnInit {
   login(){
     this.user.username = "Ryane";
     this.user.password = "666";
-    this.user.state = true;
+    this.isLogined = true;
   };
-
-  constructor(meta: Meta, title: Title) {
+  isLogined:boolean = false;
+  constructor(meta: Meta, title: Title, private werewolvesServ:WerewolvesService) {
+    this.isLogined = this.werewolvesServ.isLogined;
+    
     title.setTitle('Login Page');
 
     meta.addTags([ 
