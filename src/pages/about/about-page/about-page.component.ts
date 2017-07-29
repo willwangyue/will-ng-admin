@@ -13,7 +13,7 @@ export class AboutPageComponent implements OnInit {
 
     users:Array<any> = [];
     constructor(meta: Meta, title: Title, private werewolvesServ:WerewolvesService) {
-      this.users = this.werewolvesServ.getStudents()
+      // this.users = this.werewolvesServ.getStudents()
 
     title.setTitle('My About Page');
 

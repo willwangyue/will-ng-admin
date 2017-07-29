@@ -27,7 +27,7 @@ import { WerewolvesService } from './werewolves.service'
     // Config Router
     RouterModule.forChild([
       { path: '', component: StudentListComponent, pathMatch: 'full' },
-      { path: 'werewolves/edit/:sid', component: StudentEditComponent, pathMatch: 'full' }
+      { path: 'werewolves/edit/:id', component: StudentEditComponent, pathMatch: 'full' }
     ])
   ],
   declarations: [

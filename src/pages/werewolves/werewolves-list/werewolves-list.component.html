@@ -7,18 +7,17 @@
       </select>
 <input style="float:left;" 
   [(ngModel)]="searchText"/>
-<button style="float:left;" (click)="search()">搜索</button>
+<button style="float:left;" (click)="werewolvesServ.search(searchType,searchText)">搜索</button>
 
 </div>
 <button (click)="sortByAsccending()">正序排列</button>
 <button (click)="sortByDesccending()">倒序排列</button>
 <button (click)="sortByRadom()">随机打乱</button>
-<button (click)="deleteLast()">删除</button>
-<button routerLink="/werewolves/edit/new">新增</button>
+<button (click)="werewolvesServ.deleteChecked()">批量删除</button>
+<button routerLink="/werewolves/edit/new">新增角色</button>
 </div>
 <div class="row table-header">
       <div class="col-1">选择 </div>
-      <div class="col-1" (click)="sortByAsccending('id')">ID </div>
       <div class="col-2" (click)="sortByAsccending('role')">角色 </div>
       <div class="col-1" (click)="sortByAsccending('role_en')">角色英文名 </div>
       <div class="col-2" (click)="sortByAsccending('describe')">网页描述 </div>
@@ -30,6 +29,6 @@
 <div class="row table-row" *ngFor="let werewolves of searchResult">
   <app-werewolves-item [werewolves]="werewolves" (werewolvesClick)="selectStudent = $event"></app-werewolves-item>
 </div>
-<div class="row table-row" *ngFor="let werewolves of werewolvess">
-  <app-werewolves-item [werewolves]="werewolves" (werewolvesClick)="selectStudent = $event"></app-werewolves-item>
+<div class="row table-row" *ngFor="let werewolf of werewolves">
+  <app-werewolves-item [werewolves]="werewolf" (werewolvesClick)="selectStudent = $event"></app-werewolves-item>
 </div>

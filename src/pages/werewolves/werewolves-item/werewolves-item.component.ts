@@ -17,7 +17,12 @@ export class StudentItemComponent implements OnInit {
     this.werewolvesClick.emit(this.werewolves)
   }
   check(){
-    this.werewolves.check = true;
+     if(this.werewolves.check&&this.werewolves.check==true){
+      this.werewolves.check = false;
+     }else{
+      this.werewolves.check = true
+    }
+    // this.werewolves.check = true;
   }
   isChecked(){
     if(this.werewolves.check&&this.werewolves.check==true){
@@ -26,14 +31,14 @@ export class StudentItemComponent implements OnInit {
       return false
     }
   }
-  delete(){
-    let id = this.werewolves.id
-    this.werewolvesServ.werewolvess.forEach((item,index,array)=>{
-      if(item.id == id){
-        array.splice(index,1)
-      }
-    })
-  }
+  // delete(){
+  //   let id = this.werewolves.id
+  //   this.werewolvesServ.werewolvess.forEach((item,index,array)=>{
+  //     if(item.id == id){
+  //       array.splice(index,1)
+  //     }
+  //   })
+  // }
   ngOnInit() {
   }
 }
